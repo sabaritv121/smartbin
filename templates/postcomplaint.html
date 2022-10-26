@@ -1,0 +1,11 @@
+{% extends 'userhome.html' %}
+{% block content%}
+{%load crispy_forms_tags %}
+<form method="post">
+    {% csrf_token %}
+
+
+{{cmp|crispy}}
+    <button type="submit">submit</button>
+</form>
+{% endblock %}}

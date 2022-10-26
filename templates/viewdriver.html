@@ -1,0 +1,75 @@
+{% extends 'admin.html' %}
+{% load crispy_forms_tags%}
+{% block content %}
+
+<form>
+    <table>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered table-responsive-sm">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Phone_number</th>
+                <th>Licence_no</th>
+                <th>Whatsapp_number</th>
+                <th>Email</th>
+                <th>Badge_no</th>
+            </tr>
+            </thead>
+            <tbody>
+                                        {% for i in d %}
+                                            <tr>
+<!--                                                <th>1</th>-->
+                                                <td>{{forloop.counter}}</td>
+                                                  <td>{{i.name}}</td>
+                                                  <td>{{i.Age}}</td>
+                                                   <td>{{i.Address}}</td>
+                                                   <td> {{i.Phone_no}}</td>
+                                                    <td>{{i.licence_no}}</td>
+                                                     <td>{{i.whatsapp_no}}</td>
+                                                    <td>{{i.Email}}</td>
+                                                   <td> {{i.Badge_no}}</td>
+                                                <td><button type="button"  class="btn btn-success">Accept</button> </td>
+                                                <td><button type="button"  class="btn btn-danger">Reject</button> </td>
+
+                                        </tr>
+                                        {% endfor %}
+<!--                                                <td><span class="badge badge-primary">Sale</span>-->
+<!--                                                </td>-->
+<!--                                                <td>January 22</td>-->
+<!--                                                <td class="color-primary">$21.56</td>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+<!--                                                <th>2</th>-->
+<!--                                                <td>Kolor Tea Shirt For Women</td>-->
+<!--                                                <td><span class="badge badge-success">Tax</span>-->
+<!--                                                </td>-->
+<!--                                                <td>January 30</td>-->
+<!--                                                <td class="color-success">$55.32</td>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+<!--                                                <th>3</th>-->
+<!--                                                <td>Blue Backpack For Baby</td>-->
+<!--                                                <td><span class="badge badge-danger">Extended</span>-->
+<!--                                                </td>-->
+<!--                                                <td>January 25</td>-->
+<!--                                                <td class="color-danger">$14.85</td>-->
+<!--                                            </tr>-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+    </table>
+</form>
+
+
+
+
+
+
+
+{% endblock %}}

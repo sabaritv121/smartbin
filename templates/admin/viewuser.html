@@ -1,0 +1,84 @@
+{% extends 'admin/admin.html' %}
+{% block content %}
+<form>
+
+
+
+    <table>
+<div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Name</th>
+                                                <th>Contact_no</th>
+                                                <th>Email</th>
+                                                <th>Address</th>
+<!--                                                <th>Phone_number</th>-->
+<!--                                                <th>Licence_no</th>-->
+<!--                                                <th>Whatsapp_number</th>-->
+<!--                                                <th>Email</th>-->
+<!--                                                <th>Badge_no</th>-->
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for i in c %}
+                                            <tr>
+<!--                                                <th>1</th>-->
+                                                <td>{{forloop.counter}}</td>
+                                                  <td>{{i.Name}}</td>
+                                                  <td>{{i.Contact_no}}</td>
+                                                   <td>{{i.Email}}</td>
+                                                   <td> {{i.Address}}</td>
+                                                <td>
+                                                        {% if i.approval_status == 0 %}
+                                                        <a class="btn btn-secondary" href="{% url 'approve_user' i.id %}">Accept</a>
+<!--                                                        <a class="btn btn-danger"  href="#">Reject</a>-->
+                                                        {% elif i.approval_status == True %}
+                                                        <p class="btn-btn-success">Approved</p>
+                                                        {% else %}
+                                                        <p class="btn-btn-success">Rejected</p>
+                                                        {% endif %}
+                                                </td>
+
+                                        </tr>
+                                        {% endfor %}
+<!--                                                <th>1</th>-->
+<!--                                                <td>Kolor Tea Shirt For Man</td>-->
+<!--                                                <td><span class="badge badge-primary">Sale</span>-->
+<!--                                                </td>-->
+<!--                                                <td>January 22</td>-->
+<!--                                                <td class="color-primary">$21.56</td>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+<!--                                                <th>2</th>-->
+<!--                                                <td>Kolor Tea Shirt For Women</td>-->
+<!--                                                <td><span class="badge badge-success">Tax</span>-->
+<!--                                                </td>-->
+<!--                                                <td>January 30</td>-->
+<!--                                                <td class="color-success">$55.32</td>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+<!--                                                <th>3</th>-->
+<!--                                                <td>Blue Backpack For Baby</td>-->
+<!--                                                <td><span class="badge badge-danger">Extended</span>-->
+<!--                                                </td>-->
+<!--                                                <td>January 25</td>-->
+<!--                                                <td class="color-danger">$14.85</td>-->
+<!--                                            </tr>-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+    </table>
+</form>
+
+
+
+
+
+
+
+{% endblock %}}

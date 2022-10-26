@@ -1,0 +1,21 @@
+{% extends 'admin/admin.html' %}
+{% block content%}
+<div class="col-lg-6">
+    <div class="card">
+        <strong class="card-title" style="color:white"></strong>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <h1>Are you sure want to reject ?</h1>
+            <br>
+            <br>
+            <br>
+            <div>
+                <button type="submit" class="btn btn-primary"> YES </button>
+                <a href="{% url 'viewdriver' %}"  type="submit" class="btn-btn-primary"> CANCEL </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

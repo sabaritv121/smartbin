@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% extends 'user/viewBin.html'%}
+{% load static %}
+{% block content %}
+{% load static %}
+<html lang="en">
+<head>
+  	<title>Request</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'table/css/style.css' %}">
+
+</head>
+<body>
+	<div class="app-title">
+        	<div>
+          		<h1><i class="fa fa-trash-o fa-2x"></i> Garbage Status</h1>
+        	</div>
+        	<ul class="app-breadcrumb breadcrumb">
+				<li class="breadcrumb-item"><a href="{% url 'dashboard' %}"><i class="fa fa-home fa-lg"></i></a></li>
+          		<li class="breadcrumb-item"><a href="#">View Garbage Status </a></li>
+        	</ul>
+	</div>
+	<section class="ftco-section">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+							<tr class="table100-head">
+								<th class="column1">SI No.</th>
+								<th class="column2">Date</th>
+<!--								<th class="column3">Garbage ID</th>-->
+								<th class="column3">Bin Name</th>
+								<th class="column4">latitude</th>
+								<th class="column5">longitude</th>
+<!--								<th class="column6">Status</th>-->
+<!--								<th class="column7">Driver</th>-->
+<!--								<th class="column8">Check Status</th>-->
+							</tr>
+					    </thead>
+					    <tbody>
+						{% for i in data %}
+							<tr>
+									<td class="column1">{{forloop.counter}}</td>
+									<td class="column2">{{i.date}}</td>
+<!--									<td class="column3">{{i.id}}</td>-->
+									<td class="column3">{{i.bin_name}}</td>
+									<td class="column4">{{i.location_latitude}}</td>
+									<td class="column5">{{i.location_longitude}}</td>
+									<td class="column6"><a href="{% url 'map_view1' i.id %}"><i class="fa fa-eye"></i></a></td>
+									<td class="column7">{{i.status}}</td>
+
+							</tr>
+						{% endfor %}
+
+					    </tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'table/js/jquery.min.js' %}"></script>
+  <script src="{% static 'table/js/popper.js' %}"></script>
+  <script src="{% static 'table/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'table/js/main.js' %}"></script>
+
+</body>
+</html>
+{% endblock%}
+

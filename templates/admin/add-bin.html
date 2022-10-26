@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% extends 'admin/admin.html'%}
+{% block content %}
+{%load crispy_forms_tags %}
+{% load static %}
+<html lang="en">
+<head>
+	<title>add bin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #cfcccc;
+  padding: 20px;
+}
+</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'complaint/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'complaint/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'complaint/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'complaint/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'complaint/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'complaint/vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'complaint/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'complaint/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	<div class="app-title">
+        	<div>
+          		<h1><i class="fa fa-trash-o fa-2x"></i> Add Garbage Bin</h1>
+<!--          	<p>A free and open source Bootstrap 4 admin template</p>-->
+        	</div>
+        	<ul class="app-breadcrumb breadcrumb">
+          		<li class="breadcrumb-item"><a href="#"><i class="fa fa-home fa-lg"></i></a></li>
+          		<li class="breadcrumb-item"><a href="#">Bin Management </a></li>
+          		<li class="breadcrumb-item"><a href="#">Add Bin </a></li>
+        	</ul>
+	</div>
+	<div class="container">
+  		<form method="post">
+    		{% csrf_token %}
+<!--			<label for="name"><b>Bin Name</b></label>-->
+<!--    		<input type="text" id="name" name= "bin_name" placeholder="Bin Name...">-->
+<!--    		<label for="location1"><b>Location_latitude</b></label>-->
+<!--    		<input type="text" id="location1" name= "location_latitude" placeholder="Location_latitude...">-->
+<!--			<label for="location2"><b>Location_longitude</b></label>-->
+<!--    		<input type="text" id="location2" name= "location_longitude" placeholder="Location_longitude...">-->
+<!--			<label for="location2"><b>Location_longitude</b></label>-->
+<!--    		<input type="text" id="user" name= "customer" placeholder="user...">-->
+<!--			<label for="location2"><b>Location_longitude</b></label>-->
+<!--    		<input type="text" id="driver" name= "driver" placeholder="driver...">-->
+<!--    		<input type="submit" value="Submit">-->
+			{{form|crispy}}
+			<input type="submit" value="Submit">
+  		</form>
+	</div>
+
+
+
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'complaint/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'complaint/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'complaint/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'complaint/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'complaint/js/main.js' %}"></script>
+
+</body>
+</html>
+{% endblock %}
